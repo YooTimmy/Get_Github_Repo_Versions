@@ -15,5 +15,4 @@ One additional effort for pre-processing part is for tensorflow API. Somehow it 
 actual version IDs. I used regular expressions to filter out those lines when forming the final version list for it.
 
 Part 2:
-To remove the 'v' in front of numbers, I used regular expression to identify those strings start with 'v' and simple return the part of strings
-after 'c'. After this, I think the version ID formats across 3 repos are more or less similar.
+To remove the 'v' in front of numbers, I used regular expression to identify those strings start with 'v' and simple return the part of strings after 'c'. After this, I think the version ID formats across 3 repos are more or less similar.
