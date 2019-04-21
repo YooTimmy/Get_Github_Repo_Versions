@@ -2,14 +2,14 @@
 ##Packages Used: requests, json, re
 
 ##How to use:
-In the command line window, cd to the folder level of get_version.py, type in "python get_version.py". Then the 2 json files will be generated under the same folder.
+In the command line window, cd to the folder level of get_version.py, type in "python get_version.py". Then 2 json files will be generated in the same folder. 'original.json' is the version list without post-processing, while 'processed.json' is the one after extra processing.
 
 ##Explaination:
 
 Part 1:
 
 Since it is requested to retrieve the version IDs from github links, it is worth to explore the github API first to see if there are any available APIs to use. After some exploration, I observed that github APIs like 'https://api.github.com/repos/xx/xx/tags' would return the version IDs (including some other information as well) nicely in json format from the newest to oldest. Then we can just loop through the json file to store the version IDs in a list.
-One additional effort for pre-processing part is for the json file returned from tensorflow API. Somehow it return several additional lines in the same field as version ID before the actual version IDs show up. I used regular expressions to filter out those extra lines when forming the final version list for it.
+One additional effort for pre-processing part is for the json file returned from tensorflow API. Somehow it return several additional lines in the same field as version ID before the actual version IDs show up. I used regular expressions to filter out those extra lines when forming the final list of version IDs.
 
 Part 2:
-To remove the 'v' in front of numbers, I used regular expression to identify those strings start with 'v' and simple return the part of strings after 'v'. After this, the version ID formats across 3 repos are quite similar.
+To remove the 'v' in front of numbers, I used regular expression to identify those strings start with 'v' and simply return the remaining part of strings after 'v'. After this, the version ID formats across 3 repos are considered similar.
